@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)file:///C:/Users/Aluno/Documents/calculator.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Ana i Luna calculator´s</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .fundo{
+            background-color: rgb(179, 117, 238);
+            height: 80vh;
+            color: rgb(126, 37, 228);
+            border:rgb(179, 117, 238);
+            font-family: sans-serif;
+            text-align: center;
+        }
+        .calcu{
+            position:absolute;
+            background-color:rgb(237, 100, 214);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50px;
+            padding: 50px;
+        }
+        .bot{
+            background-color: rgb(255, 255, 255);
+            width: 70px;
+            height: 50px;
+            font-size: 25px;
+            cursor: pointer;
+            margin: 3px;
+            background-color: rgb(255, 255, 255);
+            border: rgb(180, 111, 226);
+            color: rgb(0, 0, 0);
+        }
+        .botu{
+            background-color: rgb(255, 255, 255);
+            width: 147px;
+            height: 50px;
+            font-size: 25px;
+            cursor: pointer;
+            margin: 3px;
+            background-color: rgb(255, 255, 255);
+            border: rgb(180, 111, 226);
+            color: rgb(0, 0, 0);
+        }
+        .bot:hover{
+            background-color:rgba(255, 255, 255, 0.616);
+        }
+        #resposta{
+            background-color: white;
+            width: 294px;
+            height: 30px;
+            margin: 5px;
+            font-size: 25px;
+            color: black;
+            text-align: right;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="fundo">
+        <h1>Calculator</h1>
+        <div class="calcu">
+        <h1>Digite:</h1>
+        <p id="resposta"></p>
+        <table>
+            <tbody><tr>
+                <td><button class="bot" onclick="clean()">x</button></td>
+                <td><button class="bot" onclick="back()">/</button></td>
+                <td><button class="bot" onclick="insert(&#39;/&#39;)">&lt;</button></td>
+                <td><button class="bot" onclick="insert(&#39;*&#39;)">C</button></td>
+            </tr>
+
+            <tr>
+                <td><button class="bot" onclick="insert(&#39;7&#39;)">1</button></td>
+                <td><button class="bot" onclick="insert(&#39;8&#39;)">2</button></td>
+                <td><button class="bot" onclick="insert(&#39;9&#39;)">3</button></td>
+                <td><button class="bot" onclick="insert(&#39;-&#39;)">+</button></td>
+            </tr>
+
+            <tr>
+                <td><button class="bot" onclick="insert(&#39;4&#39;)">4</button></td>
+                <td><button class="bot" onclick="insert(&#39;5&#39;)">5</button></td>
+                <td><button class="bot" onclick="insert(&#39;6&#39;)">6</button></td>
+                <td><button class="bot" onclick="insert(&#39;+&#39;)">-</button></td>
+            </tr>
+
+            <tr>
+                <td><button class="bot" onclick="insert(&#39;1&#39;)">7</button></td>
+                <td><button class="bot" onclick="insert(&#39;2&#39;)">8</button></td>
+                <td><button class="bot" onclick="insert(&#39;3&#39;)">9</button></td>
+                <td rowspan="2"><button class="bot" style="height: 106px;" onclick="calcular()">=</button></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button class="botu" onclick="insert(&#39;0&#39;)">0</button></td>
+                <td><button class="bot" onclick="insert(&#39;.&#39;)">.</button></td>
+            </tr>
+        </tbody></table>
+    </div>
+    <script>
+        function insert(num)
+        {
+            var numero = document.getElementById('resposta').innerHTML;
+            document.getElementById('resposta').innerHTML = numero + num;
+        }
+        function clean()
+        {
+            document.getElementById('resposta').innerHTML = "";
+        }
+        function back()
+        {
+            var resultado = document.getElementById('resposta').innerHTML;
+            document.getElementById('resposta').innerHTML = resultado.substring(0, resultado.length -1);
+        }
+        function calcular()
+        {
+            var resultado = document.getElementById('resposta').innerHTML;
+            if (resposta) 
+            {
+                document.getElementById('resposta').innerHTML = eval(resultado);
+            }
+            
+        }
+
+
+    </script>
+
+</div></body></html>
